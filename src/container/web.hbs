@@ -1,0 +1,126 @@
+<div>
+    {{#with web}}
+    <main>
+        <section>
+            {{#each languages}}
+            <div>
+                <ul>
+                    <li>
+                        <div>
+                            <p>
+                            <h1>{{name}}</h1>
+                            </p>
+                        </div>
+                    </li>
+                    <div>
+                        <p>
+                        <h3>Version: {{version}}</h2>
+                            </p>
+                    </div>
+                    <div>
+                        <p>
+                        <h3>Description: <cite>{{description}}</cite></h2>
+                            </p>
+                    </div>
+                    {{#each elements}}
+                    <div>
+                        <ul>
+                            <li>
+                                <p>
+                                <h4>Name: {{name}}</h4>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                <h4>Description: <cite>{{description}}</cite></h4>
+                                </p>
+                            </li>
+                            <li>
+                                <div>
+                                    <p>
+                                    <h4>Attributes:</h4>
+                                    </p>
+                                    {{#each attributes}}
+                                    <ul>
+                                        <li>
+                                            <p>Name: {{name}}</p>
+                                        </li>
+                                        <p>Description: <cite>{{description}}</cite></p>
+                                    </ul>
+                                    {{/each}}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    {{/each}}
+                    {{#each properties}}
+                    <div>
+                        <ul>
+                            <li>
+                                <p>
+                                <h4>Name: {{name}}</h4>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                <h4>Description: <cite>{{description}}</cite></h4>
+                                </p>
+                            </li>
+                            <li>
+                                <div>
+                                    <p>
+                                    <h4>Values:</h4>
+                                    </p>
+                                    {{#each values}}
+                                    <ul>
+                                        <li>
+                                            <p>Value: {{value}}</p>
+                                        </li>
+                                        <p>Description: <cite>{{description}}</cite></p>
+                                    </ul>
+                                    {{/each}}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    {{/each}}
+                    {{#each functions}}
+                    <div>
+                        <ul>
+                            <li>
+                                <p>
+                                <h4>Name: {{name}}</h4>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                <h4>Description: <cite>{{description}}</cite></h4>
+                                </p>
+                            </li>
+                            <li>
+                                <div>
+                                    <p>
+                                    <h4>Parameters:</h4>
+                                    </p>
+                                    {{#each parameters}}
+                                    <ul>
+                                        <li>
+                                            <p>Name: {{name}}</p>
+                                        </li>
+                                        <p>Type: {{type}}</p>
+                                        <p>Description: <cite>{{description}}</cite></p>
+                                    </ul>
+                                    {{/each}}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    {{/each}}
+                </ul>
+            </div>
+            <hr>
+            {{/each}}
+        </section>
+    </main>
+    {{/with}}
+</div>
