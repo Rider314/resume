@@ -1,0 +1,102 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <h1><span class="badge bg-secondary">{{name}}</span></h1>
+    {{#each users}}
+    <main>
+        <section>
+            <h3>Id: <span class="badge bg-secondary">{{id}}</span></h3>
+            <h1>{{>title data=name }}</h1>
+            <h3>Gender: <span class="badge bg-secondary">{{gender}}</span></h3>
+            <h3>Age: <span class="badge bg-secondary">{{age}}</span></h3>
+            <h3>Friends: <span class="badge bg-secondary"></span></h3>
+            {{#each friends}}
+            <div>
+                <ul>
+                    <h4>Id: <span class="badge bg-secondary">{{id}}</span></h4>
+                    <li>
+                        <h2><span class="badge bg-secondary">{{name}}</span></h2>
+                    </li>
+                    <h4>Gender: <span class="badge bg-secondary">{{gender}}</span></h4>
+                    <h4>Age: <span class="badge bg-secondary">{{age}}</span></h4>
+                    <h4>Mutual friends: <span class="badge bg-secondary"></span></h4>
+                    {{#each mutual_friends}}
+                    <div>
+                        <ul>
+                            <h5>Id: <span class="badge bg-secondary">{{id}}</span></h5>
+                            <li>
+                                <h3><span class="badge bg-secondary">{{name}}</span></h3>
+                            </li>
+                            <h5>Gender: <span class="badge bg-secondary">{{gender}}</span></h5>
+                            <h5>Age: <span class="badge bg-secondary">{{age}}</span></h5>
+
+                        </ul>
+                    </div>
+                    {{/each}}
+                    <h4>Groups: <span class="badge bg-secondary"></span></h4>
+                    {{#each groups}}
+                    <div>
+                        <ul>
+                            <h5>Id: <span class="badge bg-secondary">{{id}}</span></h5>
+                            <li>
+                                <h3><span class="badge bg-secondary">{{name}}</span></h3>
+                            </li>
+                            <h5>description: <span class="badge bg-secondary">{{description}}</span></h5>
+                            <h5>Members: <span class="badge bg-secondary"></span></h5>
+                            {{#each members}}
+                            <div>
+                                <ul>
+                                    <h5>Id: <span class="badge bg-secondary">{{id}}</span></h5>
+                                    <li>
+                                        <h3><span class="badge bg-secondary">{{name}}</span></h3>
+                                    </li>
+                                    <h5>Gender: <span class="badge bg-secondary">{{gender}}</span></h5>
+                                    <h5>Age: <span class="badge bg-secondary">{{age}}</span></h5>
+                                </ul>
+                            </div>
+                            {{/each}}
+                        </ul>
+                    </div>
+                    {{/each}}
+
+                </ul>
+            </div>
+            {{/each}}
+            <h3>Groups: <span class="badge bg-secondary"></span></h3>
+            {{#each groups}}
+            <div>
+                <ul>
+                    <h4>Id: <span class="badge bg-secondary">{{id}}</span></h4>
+                    <li>
+                        <h2><span class="badge bg-secondary">{{name}}</span></h2>
+                    </li>
+                    <h4>description: <span class="badge bg-secondary">{{description}}</span></h4>
+                    <h4>Members: <span class="badge bg-secondary"></span></h4>
+                    {{#each members}}
+                    <div>
+                        <ul>
+                            <h5>Id: <span class="badge bg-secondary">{{id}}</span></h5>
+                            <li>
+                                <h3><span class="badge bg-secondary">{{name}}</span></h3>
+                            </li>
+                            <h5>Gender: <span class="badge bg-secondary">{{gender}}</span></h5>
+                            <h5>Age: <span class="badge bg-secondary">{{age}}</span></h5>
+                        </ul>
+                    </div>
+                    {{/each}}
+                </ul>
+            </div>
+            {{/each}}
+        </section>
+    </main>
+    {{/each}}
+</div>
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
