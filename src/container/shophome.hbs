@@ -17,7 +17,7 @@
             {{#with newsBlock}}
             <h1 class="text-center">{{title}}</h1>
             {{#each cards}}
-            <div class="card text-bg-secondary col-3">
+            <div class="card text-bg-secondary col-3 m-2">
                 <div class="card-header">
                     <h6 class="card-title">{{title}}</h6>
                     {{#if isTop}}<button class="btn btn-sm btn-success">Top</button>{{/if}}
@@ -43,7 +43,7 @@
                     <a href="#" class="nav-link active">{{text}}</a>
                     {{else}}
                     {{#if isDisabled}}
-                    <a href="#" class="nav-link disable">{{text}}</a>
+                    <a href="#" class="nav-link disabled">{{text}}</a>
                     {{else}}
                     <a href="#" class="nav-link">{{text}}</a>
                     {{/if}}
@@ -53,7 +53,7 @@
             </div>
             <div class="row g-3">
                 {{#each cards}}
-                <div class="card col-4">
+                <div class="card col-4 m-2">
                     <img class="card-img-top" src="{{image}}" alt="{{title}}">
                     <div class="card-header">
                         <h6 class="card-title">{{title}}</h6>
