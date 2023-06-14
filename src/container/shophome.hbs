@@ -1,0 +1,130 @@
+<main>
+    <section>
+        <div class="card">
+            <div class="nav">
+                {{#each navigation.links}}
+                <div class="nav-item">
+                    <a href="{{href}}" class="nav-link">{{text}}</a>
+                </div>
+                {{/each}}
+                <a href="#" class="nav-link disabled">Disabled</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="row g-3">
+            {{#with newsBlock}}
+            <h1 class="text-center">{{title}}</h1>
+            {{#each cards}}
+            <div class="card text-bg-secondary col-3">
+                <div class="card-header">
+                    <h6 class="card-title">{{title}}</h6>
+                    {{#if isTop}}<button class="btn btn-sm btn-success">Top</button>{{/if}}
+                    {{#if isNew}}<button class="btn btn-sm btn-danger">New</button>{{/if}}
+                </div>
+                <div class="card-body">
+                    <p>{{description}}</p>
+                </div>
+            </div>
+            {{/each}}
+            {{/with}}
+        </div>
+        <hr>
+    </section>
+
+    <section>
+        <div class="row g-3">
+            {{#with goodsBlock}}
+            <div class="nav nav-tabs">
+                {{#each tabs}}
+                <div class="nav-item">
+                    {{#if isActive}}
+                    <a href="#" class="nav-link active">{{text}}</a>
+                    {{else}}
+                    {{#if isDisabled}}
+                    <a href="#" class="nav-link disable">{{text}}</a>
+                    {{else}}
+                    <a href="#" class="nav-link">{{text}}</a>
+                    {{/if}}
+                    {{/if}}
+                </div>
+                {{/each}}
+            </div>
+            <div class="row g-3">
+                {{#each cards}}
+                <div class="card col-4">
+                    <img class="card-img-top" src="{{image}}" alt="{{title}}">
+                    <div class="card-header">
+                        <h6 class="card-title">{{title}}</h6>
+                        {{#if isHot}}<button class="btn btn-sm btn-warning text-white">HOT!</button>{{/if}}
+                        {{#if isNew}}<button class="btn btn-sm btn-primary">New</button>{{/if}}
+                    </div>
+                    <div class="card-body">
+                        <p>{{description}}</p>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            {{/with}}
+        </div>
+        <hr>
+    </section>
+
+    <section>
+        <div>
+            {{#with subscribe}}
+            <div class="card text-bg-dark">
+                <div class="card-body">
+                    <h2>{{header}}</h2>
+                    <p>{{description}}</p>
+                    {{#each buttons}}
+                    <div class="flex-column">
+                        <p><a href="{{link}}" class="btn btn-primary">{{text}}</a></p>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{/with}}
+        </div>
+        <hr>
+    </section>
+
+    <section>
+        <div>
+            {{#with service}}
+            <div class="card text-center text-bg-success">
+                <div class="card-body">
+                    <h2>{{title}}</h2>
+                    <p>{{description}}</p>
+                    {{#each buttons}}
+                    <div class="flex-column">
+                        <p><a href="{{link}}" class="btn btn-primary">{{text}}</a></p>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{/with}}
+        </div>
+        <hr>
+    </section>
+
+    <section>
+        <div class="row">
+            <div class="nav">
+                {{#each footer}}
+                {{#with this}}
+                <div class="nav-item flex-column col-2">
+                    <a href="{{[0].link}}" class="nav-link">{{[0].text}}</a>
+                    <a href="{{[1].link}}" class="nav-link">{{[1].text}}</a>
+                    <a href="{{[2].link}}" class="nav-link">{{[2].text}}</a>
+                    <a href="{{[3].link}}" class="nav-link disabled">{{[3].text}}</a>
+                </div>
+                {{/with}}
+                {{/each}}
+            </div>
+        </div>
+        <hr>
+    </section>
+
+</main>
