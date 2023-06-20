@@ -47,7 +47,7 @@
                         {{#with surname}}
                         <form>
                             <label class="form-label">{{label}}</label>
-                            </text><input class="form-control">
+                            </text><input placeholder="{{placeholder}}" class="form-control">
                             <div class="form-text text-danger">{{caption}}</div>
                         </form>
                         {{/with}}
@@ -57,7 +57,7 @@
                         {{#with name}}
                         <form>
                             <label class="form-label">{{label}}</label>
-                            </text><input class="form-control">
+                            </text><input placeholder="{{placeholder}}" class="form-control">
                             <div class="form-text text-danger">{{caption}}</div>
                         </form>
                         {{/with}}
@@ -68,7 +68,7 @@
                         {{#with phone}}
                         <form>
                             <label class="form-label">{{label}}</label>
-                            </text><input class="form-control">
+                            </text><input placeholder="{{placeholder}}" class="form-control">
                             <div class="form-text text-danger">{{caption}}</div>
                         </form>
                         {{/with}}
@@ -78,7 +78,7 @@
                         {{#with email}}
                         <form>
                             <label class="form-label">{{label}}</label>
-                            </text><input class="form-control">
+                            </text><input placeholder="{{placeholder}}" class="form-control">
                             <div class="form-text text-danger">{{caption}}</div>
                         </form>
                         {{/with}}
@@ -92,7 +92,7 @@
                 {{#each contacts_data.form.switch}}
                 <div class="form-check form-switch">
                     <label class="form-check-label">{{text}}</label>
-                    {{#if isActive}}<input name="{{isActive}}" type="checkbox" class="form-check-input">{{/if}}
+                    <input name="choose" class="form-check-input" type="checkbox" {{#if isActive}}checked{{/if}}>
                 </div>
                 {{/each}}
             </div>
@@ -155,7 +155,7 @@
                             {{#with surname}}
                             <form>
                                 <label class="form-label">{{label}}</label>
-                                </text><input class="form-control">
+                                </text><input placeholder="{{placeholder}}" class="form-control">
                                 <div class="form-text">{{caption}}</div>
                             </form>
                             {{/with}}
@@ -165,7 +165,7 @@
                             {{#with name}}
                             <form>
                                 <label class="form-label">{{label}}</label>
-                                </text><input class="form-control">
+                                </text><input placeholder="{{placeholder}}" class="form-control">
                                 <div class="form-text">{{caption}}</div>
                             </form>
                             {{/with}}
@@ -176,7 +176,7 @@
                             {{#with phone}}
                             <form>
                                 <label class="form-label">{{label}}</label>
-                                </text><input class="form-control">
+                                </text><input placeholder="{{placeholder}}" class="form-control">
                                 <div class="form-text">{{caption}}</div>
                             </form>
                             {{/with}}
@@ -186,7 +186,7 @@
                             {{#with email}}
                             <form>
                                 <label class="form-label">{{label}}</label>
-                                <input text="{{placeholder}}" class="form-control">
+                                <input placeholder="{{placeholder}}" class="form-control">
                                 <div class="form-text">{{caption}}</div>
                             </form>
                             {{/with}}
@@ -200,7 +200,7 @@
                     {{#with coment}}
                     <form>
                         <label class="form-label">{{label}}</label>
-                        <input text="{{placeholder}}" class="form-control">
+                        <input placeholder="{{placeholder}}" class="form-control">
                     </form>
                     {{/with}}
                 </div>
@@ -301,7 +301,7 @@
                     {{#with friend}}
                     <form>
                         <label class="form-label">{{label}}</label>
-                        <input text="{{placeholder}}" class="form-control">
+                        <input placeholder="{{placeholder}}" class="form-control">
                         <div class="form-text">{{caption}}</div>
                     </form>
                     {{/with}}
@@ -310,7 +310,7 @@
                     {{#with colleague}}
                     <form>
                         <label class="form-label">{{label}}</label>
-                        <input text="{{placeholder}}" class="form-control">
+                        <input placeholder="{{placeholder}}" class="form-control">
                         <div class="form-text">{{caption}}</div>
                     </form>
                     {{/with}}
