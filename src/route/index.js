@@ -2118,7 +2118,7 @@ router.get('/shopcart', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopcart', {
-=======
+    
 router.get('/shopprofile', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -2266,7 +2266,7 @@ router.get('/shopprofile', function (req, res) {
           link: 'https://www.youtube.com/',
         },
       ],
-=======
+      
     header: 'Мої замовлення',
 
     purchase: {
