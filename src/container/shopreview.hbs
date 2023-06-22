@@ -12,170 +12,120 @@
         </div>
     </section>
 
-    <section>
-
-    </section>
-
-    <section>
-        <div class="row g-3">
-            <h1>{{header}}</h1>
-            {{#with purchase}}
-            <div class="nav nav-tabs">
-                {{#each tabs}}
-                <div class="nav-item">
-                    <a href="#" class="nav-link active text-primary">{{this}}</a>
-                </div>
-                {{/each}}
+    <section class="row">
+        <section class="col-8">
+            <div>
+                {{#with formBlock}}
+            <div>
+                <h1>{{header}}</h1>
+                <p>{{rating.title}} : {{rating.value}}</p>
             </div>
-            {{#with actionBlock}}
-            <div class="col-4">
-                <form><input class="form-control"></form>
-            </div>
-            <div class="col-4">
-                <div class="row">
-                    {{#each buttons}}
+        
+            <div>
+                {{#with actionBlock}}
+                <div class="nav nav-tabs row">
+                    {{#each tabs}}
                     <div class="col-4">
-                        {{#if isSuccess}}<a href="{{link}}" class="btn btn-success text-white">{{text}}</a>{{/if}}
-                        {{#if isOutline}}<a href="{{link}}" class="btn btn-outline-success">{{text}}</a>{{/if}}
-                        {{#if isDanger}}<a href="{{link}}" class="btn btn-outline-danger">{{text}}</a>{{/if}}
+                        <div class="nav-item">
+                            <a href="#" class="nav-link active text-primary" {{#if isActive}}checked{{/if}}>{{text}}</a>
+                            <hr>
+                            <br>
+                        </div>
                     </div>
                     {{/each}}
                 </div>
-            </div>
-            {{/with}}
-            {{/with}}
-        </div>
-        <hr>
-    </section>
-
-    <section>
-        <div>
-            {{#with purchase}}
-            <div class="row mb-3">
-                {{#each itemList}}
-                {{>purchaseItem}}
-                <hr>
-                {{/each}}
-            </div>
-            {{/with}}
-        </div>
-    </section>
-
-    <section>
-        <div>
-            {{#with userInfo}}
-            <h2>{{title}}</h2>
-            <div class="card">
-                {{#with profileData}}
-                <div class="card-body">
-                    <h3 class="card-title">{{title}}</h3>
-                    <div class="card mb-3">
-                        <div class="card-body row">
-                            {{#with fullName}}
-                            <div class="flex-column col-4">
-                                <p>{{surname.title}}</p>
-                                <h4>{{surname.value}}</h4>
-                            </div>
-                            <div class="flex-column col-4">
-                                <p>{{name.title}}</p>
-                                <h4>{{name.value}}</h4>
-                            </div>
-                            <div class="flex-column col-4">
-                                <p>{{middleName.title}}</p>
-                                <h4>{{middleName.value}}</h4>
-                            </div>
-                            {{/with}}
-                            <br>
+                <div>
+                    {{#with report}}
+                    <div class="card mt-5">
+                        <div class="card-body">
+                            <p>{{title}}</p>
+                            <a href="{{button.link}}" class="btn btn-secondary text-white">{{button.text}}</a>
                         </div>
                     </div>
-
-                    <div class="card mb-3">
-                        <div class="card-body row">
-                            {{#with otherInfo}}
-                            <div class="flex-column col-4">
-                                <p>{{birthday.title}}</p>
-                                <h4>{{birthday.value}}</h4>
-                            </div>
-                            <div class="flex-column col-4">
-                                <p>{{sex.title}}</p>
-                                <h4>{{sex.value}}</h4>
-                            </div>
-                            <div class="flex-column col-4">
-                                <p>{{language.title}}</p>
-                                <h4>{{language.value}}</h4>
-                            </div>
-                            {{/with}}
-                            <br>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-body row">
-                            {{#each buttons}}
-                            <div class="col-4">
-                                {{#if isPrimary}}<a href="{{link}}" class="btn btn-primary">{{text}}</a>{{/if}}
-                                {{#if isSecondary}}<a href="{{link}}"
-                                    class="btn btn-outline-secondary">{{text}}</a>{{/if}}
-                                {{#if isDanger}}<a href="{{link}}" class="btn btn-outline-danger">{{text}}</a>{{/if}}
-                            </div>
-                            {{/each}}
-                        </div>
-                    </div>
+                    {{/with}}
+                    <br>
+                    <hr>
                 </div>
                 {{/with}}
-            </div>
-            {{/with}}
-        </div>
-    </section>
 
-
-    <section>
-        <div>
-            {{#with userInfo.recipients}}
-            <div class="card">
-                <div class="card-body row">
-                    <h3 class="card-title">{{title}}</h3>
-                    {{#each users}}
-                    <div class="card col-4 ms-3">
-                        <div class="card-body">
-                            <div class="flex-column">
-                                <h4>{{name}}</h4>
-                                <p>{{phone}}</p>
-                                {{#with button}}
-                                <p><a href="{{link}}" class="btn btn-primary">{{text}}</a></p>
-                                {{/with}}
-                            </div>
+                <div class="mt-5"> 
+                    {{#with feedbackBlock}}
+                    <h2>{{title}}</h2>
+                    <div class="row">
+                        {{#each buttons}}
+                        <div class="col-4 mt-5">
+                            {{#if isWarning}}<a href="{{link}}" class="btn btn-warning text-white">{{text}}</a>{{/if}}
+                            {{#if isSuccess}}<a href="{{link}}" class="btn btn-success">{{text}}</a>{{/if}}
+                            {{#if isDanger}}<a href="{{link}}" class="btn btn-danger">{{text}}</a>{{/if}}
                         </div>
-
+                        {{/each}}
                     </div>
-                    {{/each}}
                 </div>
+                    {{/with}}
             </div>
             {{/with}}
+            </div>
+        </section>
+
+        
+
+        <section class="col-4">
+            <div>
+                {{#with formBlock}}
+                {{#with goodsInfo}}
+                
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <img src="{{photo}}" alt="{{name}}">
+                                <br>
+                                <h6 class="mt-3">{{name}}</h6>
+                            </div>
+                        </div>
+
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="flex-column col-6">
+                                    <h4>{{price}}</h4>
+                                    <p>{{#if inMarket}} Є в наявності {{/if}}</p>
+                                    {{#each buttons}}
+                                    {{#if isPrimary}}<a href="{{link}}" class="btn btn-primary">{{text}}</a>{{/if}}
+                                    {{#if isSecondary}}<a href="{{link}}"
+                                        class="btn btn-secondary mt-3">{{text}}</a>{{/if}}
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body row">
+                                <p>{{seller.title}} : <b>{{seller.value}}</b></p>
+                            </div>
+                        </div>
+                
+                {{/with}}
+                {{/with}}
+            </div>
+        </section>
+    </section>
+    <hr>
+    <section>
+        <div>
+            {{#each reviewList}}
+            {{>reviewItem}}
+            {{/each}}
         </div>
     </section>
 
     <section>
         <div>
-            {{#with userInfo.contacts}}
-            <div class="card">
-                <div class="card-body row">
-                    <h3 class="card-title">{{title}}</h3>
-                    {{#each contactData}}
-                    <div class="card col-4 ms-">
-                        <div class="card-body">
-                            <div class="flex-column">
-                                <h4>{{title}}</h4>
-                                <p>{{value}}</p>
-                                {{#with button}}
-                                {{#if isPrimary}}<p><a href="{{link}}" class="btn btn-primary">{{text}}</a></p>{{/if}}
-                                {{#if isSecondary}}<p><a href="{{link}}" class="btn btn-secondary">{{text}}</a></p>
-                                {{/if}}
-                                {{#if isDanger}}<p><a href="{{link}}" class="btn btn-danger">{{text}}</a></p>{{/if}}
-                                {{/with}}
-                            </div>
-                        </div>
-
+            {{#with service}}
+            <div class="card text-bg-success">
+                <div class="card-body text-center">
+                    <h2>{{title}}</h2>
+                    <p>{{description}}</p>
+                    {{#each buttons}}
+                    <div class="flex-column">
+                        <p><a href="{{link}}" class="btn btn-primary">{{text}}</a></p>
                     </div>
                     {{/each}}
                 </div>
