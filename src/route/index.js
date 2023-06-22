@@ -2118,6 +2118,13 @@ router.get('/shopcart', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopcart', {
+    
+router.get('/shopprofile', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shopprofile', {
+
     layout: 'shop',
     navigation: {
       links: [
@@ -2380,7 +2387,7 @@ router.get('/shopprofile', function (req, res) {
         },
       ],
     },
-
+    
     header: 'Мої замовлення',
 
     purchase: {
